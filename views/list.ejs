@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Web</title> <!-- Judul Web -->
+    <link rel="stylesheet" href="tampilan.css"
+</head>
+<body>
+    <h1>Daftar Siswa</h1> <!--Membuat Judul Atas-->
+
+    <a href="/add">tambah</a>
+
+    <table border="1"> <!--Membuat Border Garis Tabel-->
+        <tr>
+            <th>Nama</th> <!--Membuat Baris Tabel Nama-->
+            <th>Umur</th> <!--Membuat Baris Tabel Umur-->
+            <th>Action</th>
+        </tr>
+        <% data.forEach((item, index) => { %>
+        <tr>
+            <td><%= item.nama %></td> <!--Membuat Kolom Tabel Berisi Nama, = berfungsi ngeprint atribut-->
+            <td><%= item.umur %></td> <!--Membuat Kolom Tabel Berisi Umur-->
+            <td>
+                <a href="/delete/<%= index %>">delete</a>
+            </td>
+        </tr>
+
+    <% }) %>
+
+    </table>
+
+
+</body>
+</html>
